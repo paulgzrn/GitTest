@@ -1,0 +1,36 @@
+#Gradle
+.gradle
+**/build/
+!src/**/build/
+gradle.app.se
+
+#IDEA
+.idea
+.idea/
+.shelf
+/*.iml
+/*.ipr
+/*.iws
+/out
+/out/*.*
+
+#logs
+/*.log
+
+# Others
+# ----
+**/*.class
+**/*.bin
+**/*.build
+**/*.out
+build
+build/
+**/*.jar
+
+#Skip all CVS related
+CVS/
+/CVS/*
+**/CVS/*
+.cvsignore
+*/.cvsignore
+
