@@ -5,25 +5,35 @@ plugins {
     application
 }
 
-group = "me.paulg"
+group = "itProjekt"
 version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
 }
 
+//Add a entry for each Library
 dependencies {
     testImplementation(kotlin("test"))
+    implementation(kotlin("stdlib-jdk8"))
+    implementation("com.rabbitmq:amqp-client:5.16.0") //RabbitMQ
 }
+
 
 tasks.test {
     useJUnitPlatform()
 }
 
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
-}
+
 
 application {
-    mainClass.set("MainKt")
+    mainClass.set("Main.kt")
+}
+val compileKotlin: KotlinCompile by tasks
+compileKotlin.kotlinOptions {
+    jvmTarget = "1.8"
+}
+val compileTestKotlin: KotlinCompile by tasks
+compileTestKotlin.kotlinOptions {
+    jvmTarget = "1.8"
 }
